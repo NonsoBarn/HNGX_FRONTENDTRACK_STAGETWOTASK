@@ -6,7 +6,9 @@ import Footer from "../components/Footer";
 const Layout = () => {
   return (
     <div className="flex flex-col h-screen justify-between bg-slate-50 text-slate-900 font-raleway">
-      {/* <Navbar /> */}
+      <div className="lg:hidden bg-black">
+        <Navbar />
+      </div>
       <main className="">
         <Outlet />
       </main>

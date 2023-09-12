@@ -10,14 +10,16 @@ const Navbar = () => {
         <img src="/Logo.png" alt="Logo" className="w-28 lg:w-32" />
       </Link>
       {/* Search Bar */}
-      <div className="hidden md:block">
+      <div className="hidden lg:block">
         <SearchBar />
       </div>
 
       {/* Sign in & menu icon */}
       <div className="flex items-center gap-6">
-        <div className="text-white hidden lg:block">Sign in</div>
-        <div className=" bg-pink-700 p-2 rounded-full">
+        <div className="text-white hidden lg:block cursor-pointer">
+          <p>Sign in</p>
+        </div>
+        <div className=" bg-pink-700 p-2 rounded-full cursor-pointer">
           <img src="/Menu4.svg" alt="Menu Icon" className="w-4 lg:w-5" />
         </div>
       </div>

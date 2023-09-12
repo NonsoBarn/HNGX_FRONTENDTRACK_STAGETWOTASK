@@ -21,23 +21,15 @@ const Home = () => {
         // console.log(topMovies);
       })
       .catch((error) => {
-        setError(error.message);
+        setError("Request failed: Could not get movies data.");
         setLoading(false);
       });
   }, []);
 
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
   return (
     <div className="flex flex-col min-h-[100vh]">
       <Hero />
-      <MovieList topMovies={topMovies} />
+      <MovieList topMovies={topMovies} error={error} loading={loading} />
     </div>
   );
 };

@@ -2,10 +2,13 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axiosInstance from "../utils/api";
 import SideNav from "../components/SideNav";
+import Error from "../components/Error";
+import Loading from "../components/Loading";
+import Navbar from "../components/Navbar";
 
 const MovieDetails = () => {
   const { id } = useParams();
-  const [movieDetails, setMovieDetails] = useState(null);
+  const [movieDetails, setMovieDetails] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -18,67 +21,76 @@ const MovieDetails = () => {
         setLoading(false);
       })
       .catch((error) => {
-        setError(error.message);
+        setError("Request failed: Could not get movie details data.");
         setLoading(false);
       });
   }, [id]);
 
-  // console.log(movieDetails);
-
-  if (loading) {
-    return <div>Loading...</div>;
-  }
-
-  if (error) {
-    return <div>Error: {error}</div>;
-  }
-
   return (
     <div className="">
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         {/* Side Nav */}
-        <div className="">
+        <div className="hidden lg:flex">
           <SideNav />
         </div>
 
-        {/* Movie Details */}
+        {/* Reg Nav Mobile */}
 
+        <div className="bg-black lg:hidden">
+          <Navbar />
+        </div>
+
+        {/* Content */}
         <div className=" p-10">
-          <div className="flex flex-col">
-            <div className="mb-4">
-              <img
-                data-testid="movie-poster"
-                src={`https://image.tmdb.org/t/p/w300${movieDetails.backdrop_path}`}
-                alt={movieDetails.title}
-                className="lg:w-1/2"
-              />
-            </div>
-            <div className="flex gap-5 font-semibold text-sm ">
-              <p>{movieDetails.title}</p>
-              <ul className="flex justify-center items-center gap-3">
-                <li> {movieDetails.release_date}</li>
-                <li>{movieDetails.runtime} minutes</li>
-              </ul>
-            </div>
+          {error ? (
+            // Error
+            <Error error={error} />
+          ) : (
+            <div>
+              {loading ? (
+                // loader
+                <div className="ml-64">
+                  <Loading />
+                </div>
+              ) : (
+                // Details
+                <div>
+                  {/* Movie Details */}
+                  <div className="flex flex-col">
+                    <div className="mb-4">
+                      <img
+                        data-testid="movie-poster"
+                        src={`https://image.tmdb.org/t/p/w300${movieDetails.backdrop_path}`}
+                        alt={movieDetails.title}
+                        className="lg:w-1/2"
+                      />
+                    </div>
+                    <div className="flex gap-5 font-semibold text-xs lg:text-sm ">
+                      <p>{movieDetails.title}</p>
+                      <ul className="flex justify-center items-center gap-3">
+                        <li> {movieDetails.release_date}</li>
+                        <li>{movieDetails.runtime} minutes</li>
+                      </ul>
+                    </div>
 
-            {/* description */}
-            <div className="w-3/5 mt-3">
-              <p>{movieDetails.overview}</p>
-            </div>
+                    {/* description */}
+                    <div className="lg:w-3/5 mt-3">
+                      <p>{movieDetails.overview}</p>
+                    </div>
 
-            {/* Other Addition */}
+                    {/* Other Addition */}
 
-            <div className="mt-3">
-              <div className="flex gap-2 mt-3">
-                <p>Tagline :</p>{" "}
-                <p className="text-pink-700">{movieDetails.tagline}</p>
-              </div>
-              <div className="flex gap-2 mt-3">
-                <p>Home Page :</p>{" "}
-                <p className="text-pink-700">{movieDetails.homepage}</p>
-              </div>
+                    <div className="mt-3 text-xs lg:text-base">
+                      <div className="flex gap-2 mt-3 ">
+                        <p>Tagline:</p>{" "}
+                        <p className="text-pink-700">{movieDetails.tagline}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

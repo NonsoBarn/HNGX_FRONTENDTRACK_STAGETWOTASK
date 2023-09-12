@@ -1,20 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const SideNav = () => {
   return (
     <div className=" flex flex-col items-center justify-center rounded-r-[40px] px-20 border border-gray-400 py-10 mb-7">
       {/* logo */}
-      <div>
+      <Link to="/">
         <img src="/Logoblack.png" alt="Logo" className="w-28 lg:w-32" />
-      </div>
+      </Link>
 
       {/* Nav components */}
       <div className="mt-16">
         {/* Home */}
-        <div className="flex items-center gap-3 ">
+        <Link to="/" className="flex items-center gap-3 ">
           <img src="/Home.png" alt="Home icon" className="" />
           <p className="font-bold text-gray-500">Home</p>
-        </div>
+        </Link>
 
         {/* Movies */}
         <div className="pl-1 flex items-center gap-3 mt-10 ">

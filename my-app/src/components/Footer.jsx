@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <div className="flex flex-col items-center  mt-auto mb-20">
+    <div className="flex flex-col items-center  mt-auto mb-20 pt-24 pb-10">
       {/* Social icons */}
 
       <div className=" flex items-center justify-center gap-10">

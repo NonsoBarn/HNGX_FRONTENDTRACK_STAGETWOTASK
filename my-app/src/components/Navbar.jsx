@@ -1,13 +1,14 @@
 import React from "react";
 import SearchBar from "./SearchBar";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="flex justify-between items-center py-3 px-5 lg:px-20  bg-black">
+    <nav className="flex justify-between items-center py-3 px-5 lg:px-20">
       {/* Logo */}
-      <div>
+      <Link to="/">
         <img src="/Logo.png" alt="Logo" className="w-28 lg:w-32" />
-      </div>
+      </Link>
       {/* Search Bar */}
       <div className="hidden md:block">
         <SearchBar />

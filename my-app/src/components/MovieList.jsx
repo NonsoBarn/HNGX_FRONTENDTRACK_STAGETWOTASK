@@ -1,7 +1,9 @@
 import React from "react";
+
 import MovieCard from "./MovieCard";
 
-const MovieList = () => {
+const MovieList = ({ topMovies }) => {
+  const firstTenMovies = topMovies.slice(0, 10);
   return (
     <>
       <div>
@@ -13,10 +15,9 @@ const MovieList = () => {
 
         {/* Movie List */}
         <div className="grid place-items-center grid-cols-1 md:grid-cols-3 lg:grid-cols-4 ml-5 gap-5">
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
-          <MovieCard />
+          {firstTenMovies.map((movie) => (
+            <MovieCard key={movie.id} movie={movie} />
+          ))}
         </div>
       </div>
     </>

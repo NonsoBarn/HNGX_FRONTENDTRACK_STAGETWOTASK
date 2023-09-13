@@ -13,25 +13,25 @@ const SideNav = () => {
       <div className="mt-16">
         {/* Home */}
         <Link to="/" className="flex items-center gap-3 ">
-          <img src="/Home.png" alt="Home icon" className="" />
+          <img src="/Home.png" alt="Home icon" />
           <p className="font-bold text-gray-500">Home</p>
         </Link>
 
         {/* Movies */}
         <div className="pl-1 flex items-center gap-3 mt-10 ">
-          <img src="/Movie Projector.png" alt="Movies icon" className="" />
+          <img src="/Movie Projector.png" alt="Movies icon" />
           <p className="font-bold text-gray-500">Movies</p>
         </div>
 
         {/* Tv Series */}
         <div className=" flex items-center gap-3 mt-10 ">
-          <img src="/Tv Show.png" alt="TV Series Icon" className="" />
+          <img src="/Movie Projector.png" alt="TV Series Icon" />
           <p className="font-bold text-gray-500">TV Series</p>
         </div>
 
         {/* Upcoming */}
         <div className=" flex items-center gap-3 mt-10 ">
-          <img src="/Calendar.png" alt="Upcoming icon" className="" />
+          <img src="/Calendar.png" alt="Upcoming icon" />
           <p className="font-bold text-gray-500">Upcoming</p>
         </div>
       </div>

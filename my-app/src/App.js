@@ -18,7 +18,7 @@ function App() {
           <Route index element={<Home />} />
         </Route>
         <Route element={<LayoutNoNav />}>
-          <Route path=":id" element={<MovieDetails />} />
+          <Route path="/movies/:id" element={<MovieDetails />} />
         </Route>
       </Route>
     )

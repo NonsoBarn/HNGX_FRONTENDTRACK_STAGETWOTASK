@@ -59,23 +59,29 @@ const MovieDetails = () => {
                   <div className="flex flex-col">
                     <div className="mb-4">
                       <img
-                        data-testid="movie-poster"
                         src={`https://image.tmdb.org/t/p/w300${movieDetails.backdrop_path}`}
                         alt={movieDetails.title}
                         className="lg:w-1/2"
                       />
                     </div>
                     <div className="flex gap-5 font-semibold text-xs lg:text-sm ">
-                      <p>{movieDetails.title}</p>
+                      <p data-testid="movie-title">{movieDetails.title}</p>
                       <ul className="flex justify-center items-center gap-3">
-                        <li> {movieDetails.release_date}</li>
-                        <li>{movieDetails.runtime} minutes</li>
+                        <li data-testid="movie-release-date">
+                          {" "}
+                          {movieDetails.release_date}
+                        </li>
+                        <li data-testid="movie-runtime">
+                          {movieDetails.runtime} minutes
+                        </li>
                       </ul>
                     </div>
 
                     {/* description */}
                     <div className="lg:w-3/5 mt-3">
-                      <p>{movieDetails.overview}</p>
+                      <p data-testid="movie-overview">
+                        {movieDetails.overview}
+                      </p>
                     </div>
 
                     {/* Other Addition */}

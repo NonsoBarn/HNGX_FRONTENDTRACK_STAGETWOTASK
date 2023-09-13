@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const MovieCard = ({ movie, key }) => {
   return (
-    <Link to={`/${movie.id}`}>
+    <Link to={`/movies/${movie.id}`}>
       <div data-testid="movie-card" className="w-42">
         {/* image poster */}
 
@@ -15,10 +15,15 @@ const MovieCard = ({ movie, key }) => {
         />
 
         {/* Release date */}
-        <p className="text-xs font-bold text-gray-400 pt-2 pb-1">
+        <p
+          data-testid="movie-release-date"
+          className="text-xs font-bold text-gray-400 pt-2 pb-1"
+        >
           {movie.release_date}
         </p>
-        <p className="text-black font-bold text-sm">{movie.title}</p>
+        <p data-testid="movie-title" className="text-black font-bold text-sm">
+          {movie.title}
+        </p>
       </div>
     </Link>
   );

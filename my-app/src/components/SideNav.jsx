@@ -25,7 +25,7 @@ const SideNav = () => {
 
         {/* Tv Series */}
         <div className=" flex items-center gap-3 mt-10 ">
-          <img src="/Movie Projector.png" alt="TV Series Icon" />
+          <img src="/TV.png" alt="TV Series Icon" />
           <p className="font-bold text-gray-500">TV Series</p>
         </div>
 

@@ -9,7 +9,7 @@ This is a movie discovery web application built with React.js and Tailwind CSS. 
 - A list of the top 10 movies on the homepage.
 - Displayed movie posters, titles, and release dates.
 - Click to view detailed information about each movie.
-- Error handling for API failures.
+
 
 ## Installation
 

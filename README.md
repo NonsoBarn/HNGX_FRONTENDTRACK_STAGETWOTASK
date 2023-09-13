@@ -1,6 +1,6 @@
 # Movie Discovery Web Application
 
-This is a movie discovery web application built with React.js and Tailwind CSS. Users can search for movies, view movie details, and save their favorite movies. The application consumes data from the TMDB API.
+This is a movie discovery web application built with React.js and Tailwind CSS. Users can search for movies and view movie details. The application consumes data from the TMDB API.
 
 
 

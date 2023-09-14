@@ -72,7 +72,7 @@ const MovieDetails = () => {
                           {movieDetails.release_date}
                         </li>
                         <li data-testid="movie-runtime">
-                          {movieDetails.runtime} minutes
+                          {movieDetails.runtime}
                         </li>
                       </ul>
                     </div>

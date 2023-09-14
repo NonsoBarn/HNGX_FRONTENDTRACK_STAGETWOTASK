@@ -12,7 +12,7 @@ const MovieCard = ({ movie }) => {
   // Converting date
   const releaseDate = new Date(movie.release_date);
 
-  // Get options to format the date as "Fri 20, Sept 1994"
+  // format the date as "Fri 20, Sept 1994"
   const dateOptions = {
     weekday: "short", // Short weekday name (e.g., "Fri")
     day: "numeric", // Day of the month (e.g., "20")

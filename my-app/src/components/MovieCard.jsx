@@ -9,6 +9,12 @@ const MovieCard = ({ movie }) => {
     setIsToggled(!isToggled); // Toggle the like state
   };
 
+  // Converting date
+  const releaseDate = new Date(movie.release_date);
+
+  // Convert releaseDate to UTC string
+  const utcReleaseDate = releaseDate.toUTCString();
+
   return (
     <div className="relative">
       {" "}
@@ -64,7 +70,7 @@ const MovieCard = ({ movie }) => {
             data-testid="movie-release-date"
             className="text-xs font-bold text-gray-400 pt-2 pb-1"
           >
-            {movie.release_date}
+            {utcReleaseDate}
           </p>
           <p data-testid="movie-title" className="text-black font-bold text-sm">
             {movie.title}

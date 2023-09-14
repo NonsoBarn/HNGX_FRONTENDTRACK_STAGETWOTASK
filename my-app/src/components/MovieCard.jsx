@@ -9,20 +9,6 @@ const MovieCard = ({ movie }) => {
     setIsToggled(!isToggled); // Toggle the like state
   };
 
-  // Converting date
-  const releaseDate = new Date(movie.release_date);
-
-  // format the date as "Fri 20, Sept 1994"
-  const dateOptions = {
-    weekday: "short", // Short weekday name (e.g., "Fri")
-    day: "numeric", // Day of the month (e.g., "20")
-    month: "short", // Short month name (e.g., "Sept")
-    year: "numeric", // Full year (e.g., "1994")
-  };
-
-  // Convert releaseDate to UTC string
-  const utcReleaseDate = releaseDate.toLocaleDateString(undefined, dateOptions);
-
   return (
     <div className="relative">
       {" "}
@@ -78,7 +64,7 @@ const MovieCard = ({ movie }) => {
             data-testid="movie-release-date"
             className="text-xs font-bold text-gray-400 pt-2 pb-1"
           >
-            {utcReleaseDate}
+            {movie.release_date}
           </p>
           <p data-testid="movie-title" className="text-black font-bold text-sm">
             {movie.title}
